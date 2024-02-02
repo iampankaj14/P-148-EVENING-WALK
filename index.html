@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
+</head>
+
+<body>
+  <a-scene background="color:black">
+
+    <a-camera position="0 8 15"></a-camera>
+
+    <!-------------------------------------------Asset Management------------------------------------------->
+    <a-assets timeout="10000">
+      
+      <a-asset-item id="cat" src="assets/Model/Cat/scene.gltf"></a-asset-item>
+      <a-asset-item id="girl" src="assets/Model/Girl/scene.gltf"></a-asset-item>
+      <a-asset-item id="sidewalk" src="assets/Model/Sidewalk/scene.gltf"></a-asset-item>
+      <a-asset-item id="tombstone" src="assets/Model/Tombstone/scene.gltf"></a-asset-item>
+
+      <img id="bg" src="/assets/Backgroud/spook.jpg">
+
+    </a-assets>
+    <a-sky src="#bg"></a-sky>
+    
+
+    <!-------------------------------------Lights in the scene----------------------------------------------->
+
+    <!--Ambient-->
+   
+    <a-entity light="type: point; castShadow: True; color: gold; intensity: 1.35"
+              position="9.9 -10.3 1.2">
+    </a-entity>
+    
+      <a-entity light="type: ambient;"></a-entity>
+    
+    <!-------------------------------------Circular Plane----------------------------------------------->
+
+    <a-circle position="-0.4 -0.76 -25" rotation="-90 0 0" radius="100" shadow="receive: true" visible="true"
+      color="black">
+    </a-circle>
+
+    <!--------------------------------------GLTF Models----------------------------------------------------------->
+
+    <!--Tiger-->
+    <a-entity>
+      <a-entity position="-4 9 -1" scale="6 6 6" rotation="360 180 360"gltf-model="#cat" >
+      </a-entity>
+    </a-entity>
+
+   
+    <a-entity>
+    <a-entity position="-11 3 2" scale="4 4 4" gltf-model="#girl"></a-entity>
+    </a-entity>
+    
+  
+  <a-entity>
+    <a-entity position="-23 0 -5" scale="9 9 9" gltf-model="#sidewalk">
+    </a-entity>
+  </a-entity>
+
+  
+    <a-entity>
+    <a-entity position="1 0 -6" scale="4 4 4" gltf-model="#tombstone">
+    </a-entity> 
+  </a-entity>
+  
+  </a-scene>
+</body>
+
+</html>
